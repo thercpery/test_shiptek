@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 
@@ -6,8 +7,9 @@ const PORT = process.env.PORT || 5000
 
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }))
 
-app.get("/", (req, res) => res.send("Test for Shiptek."));
+app.get("/", (req, res) => res.send("Test for Shiptek."))
+app.use("/api/reviews", require("./routes/reviewsRoutes"))
 
-app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running at port ${PORT}`))
