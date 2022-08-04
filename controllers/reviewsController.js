@@ -1,5 +1,4 @@
 require("dotenv").config()
-const asyncHandler = require("express-async-handler")
 const yelp = require("yelp-fusion")
 const yelpClient = yelp.client(process.env.YELP_API_KEY)
 
